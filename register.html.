@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#001a14">
+  <title>Create Account | Oakmont Private Banking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <span class="muted">Account Registration</span>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container brandbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span>
+        <span class="brand-name">OAKMONT</span>
+        <span class="brand-subtitle" style="display:block">PRIVATE BANKING</span>
+      </span>
+    </a>
+  </div>
+
+  <main class="form-wrap">
+    <section class="panel">
+      <p class="eyebrow">Get started</p>
+      <h1 style="font-size:2.2rem">Create your account</h1>
+      <p>Enter your details to register.</p>
+
+      <div id="register-message" class="notice hidden"
+           role="status" aria-live="polite"></div>
+
+      <form id="register-form">
+        <div class="form-group">
+          <label for="full-name">Full name</label>
+          <input id="full-name" name="fullName" type="text"
+                 autocomplete="name" maxlength="100"
+                 required placeholder="Your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email"
+                 autocomplete="email" required
+                 placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password"
+                 autocomplete="new-password" minlength="12"
+                 required placeholder="At least 12 characters">
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm password</label>
+          <input id="confirm-password" name="confirmPassword"
+                 type="password" autocomplete="new-password"
+                 minlength="12" required
+                 placeholder="Enter the password again">
+        </div>
+
+        <button id="register-button" type="submit">Create Account</button>
+      </form>
+
+      <p class="form-footer">
+        Already registered?
+        <a href="login.html">Sign in</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Oakmont Private Banking</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const form = document.getElementById("register-form");
+    const message = document.getElementById("register-message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmation =
+        document.getElementById("confirm-password").value;
+
+      message.classList.remove("hidden", "success", "error");
+      message.classList.add("notice");
+
+      if (password !== confirmation) {
+        message.classList.add("error");
+        message.textContent = "The passwords do not match.";
+        return;
+      }
+
+      message.textContent =
+        "Registration is not connected yet. Authentication setup is required.";
+    });
+  </script>
+</body>
+</html>
