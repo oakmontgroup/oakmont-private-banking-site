@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#001a14">
+  <meta name="description" content="Oakmont Private Banking account portal.">
+  <title>Oakmont Private Banking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <span class="muted">Private Banking</span>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="login.html">Secure Access</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container brandbar">
+    <a class="brand" href="index.html" aria-label="Oakmont home">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span>
+        <span class="brand-name">OAKMONT</span>
+        <span class="brand-subtitle" style="display:block">PRIVATE BANKING</span>
+      </span>
+    </a>
+    <a class="button secondary" href="register.html">Open an Account</a>
+  </div>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A considered approach to account management</p>
+        <h1>Clarity and confidence in every account.</h1>
+        <p>
+          Access your account overview, review recorded activity,
+          and manage your profile through the Oakmont account portal.
+        </p>
+        <div class="actions">
+          <a class="button" href="login.html">Sign In Securely</a>
+          <a class="button secondary" href="register.html">Create an Account</a>
+        </div>
+        <p class="muted" style="font-size:.85rem">
+          Secure access is protected by account authentication.
+        </p>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">OAKMONT STANDARD</p>
+        <h2>Personal account access</h2>
+        <p>
+          A clear overview of your profile, account records,
+          and available account information in one place.
+        </p>
+        <div class="notice">
+          Account information is available after signing in.
+        </div>
+        <a href="login.html">Continue to your account →</a>
+      </div>
+    </section>
+
+    <section class="container section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Account services</p>
+        <h2>Designed around your needs</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Account Overview</h3>
+          <p>Review your account information and available balance.</p>
+        </article>
+        <article class="card">
+          <h3>Activity Records</h3>
+          <p>Review transaction entries recorded for your account.</p>
+        </article>
+        <article class="card">
+          <h3>Profile Management</h3>
+          <p>Access and maintain your personal account details.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="about">
+      <div class="panel">
+        <p class="eyebrow">About the portal</p>
+        <h2>Built for clear account management</h2>
+        <p>
+          This website provides an account-management interface.
+          Available functions depend on the services configured for
+          the account and the permissions assigned to the signed-in user.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Oakmont Private Banking</p>
+      <p>Account access is subject to authentication and authorization.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
